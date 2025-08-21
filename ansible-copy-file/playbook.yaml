@@ -1,0 +1,9 @@
+---
+- name: Copier un fichier vers un hôte distant
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Copier fichier.txt sur le serveur distant
+      copy:
+        src: files/fichier.txt
+        dest: /tmp/fichier.txt
