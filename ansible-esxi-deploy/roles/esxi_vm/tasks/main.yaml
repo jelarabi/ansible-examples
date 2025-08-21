@@ -1,10 +1,4 @@
 ---
-- name: Deploy VM on ESXi
-  hosts: esxi_hosts
-  gather_facts: no
-  roles:
-    - esxi_vm
-
 - name: Connect to ESXi host
   vmware_guest:
     hostname: "{{ esxi_hostname }}"
