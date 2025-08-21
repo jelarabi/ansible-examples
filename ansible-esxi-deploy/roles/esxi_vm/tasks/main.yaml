@@ -1,0 +1,34 @@
+---
+- name: Deploy VM on ESXi
+  hosts: esxi_hosts
+  gather_facts: no
+  roles:
+    - esxi_vm
+
+- name: Connect to ESXi host
+  vmware_guest:
+    hostname: "{{ esxi_hostname }}"
+    username: "{{ esxi_username }}"
+    password: "{{ esxi_password }}"
+    validate_certs: no
+    state: present
+    name: "{{ vm_name }}"
+    template: "{{ vm_template }}"
+    hardware:
+      memory_mb: "{{ vm_memory }}"
+      num_cpus: "{{ vm_cpus }}"
+    networks:
+      - name: "{{ vm_network }}"
+        ip: "{{ vm_ip }}"
+        netmask: "{{ vm_netmask }}"
+        type: static
+    wait_for_ip_address: yes
+
+- name: Power on the VM
+  vmware_guest_powerstate:
+    hostname: "{{ esxi_hostname }}"
+    username: "{{ esxi_username }}"
+    password: "{{ esxi_password }}"
+    validate_certs: no
+    name: "{{ vm_name }}"
+    state: poweredon

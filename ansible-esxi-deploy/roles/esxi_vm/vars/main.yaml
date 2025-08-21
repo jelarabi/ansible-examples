@@ -1,0 +1,14 @@
+vm_name: "MyVM"
+resource_allocation:
+  cpu: 2
+  memory: 4096
+  disk_size: 20G
+network_settings:
+  network_name: "VM Network"
+  ip_address: "192.168.1.100"
+  netmask: "255.255.255.0"
+  gateway: "192.168.1.1"
+esxi_host:
+  hostname: "esxi.example.com"
+  username: "root"
+  password: "your_password"
