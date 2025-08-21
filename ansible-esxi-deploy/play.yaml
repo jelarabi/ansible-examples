@@ -1,5 +1,5 @@
 # filepath: ansible-esxi-deploy/play.yaml
-- hosts: all
+- hosts: localhost
   gather_facts: no
   roles:
     - esxi_vm
