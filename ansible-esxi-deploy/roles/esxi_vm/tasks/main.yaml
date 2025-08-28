@@ -8,6 +8,7 @@
     state: present
     name: "{{ vm_name }}"
     folder: "{{ vm_folder }}"
+    datastore: "{{ datastore }}"
     #template: "{{ vm_template }}"
     hardware:
       memory_mb: "{{ vm_memory }}"
