@@ -9,6 +9,8 @@
     name: "{{ vm_name }}"
     folder: "{{ vm_folder }}"
     datastore: "{{ datastore }}"
+    datacenter: "{{ datacenter_name }}"
+    guest_id: "otherGuest64" 
     #template: "{{ vm_template }}"
     hardware:
       memory_mb: "{{ vm_memory }}"
