@@ -1,0 +1,15 @@
+---
+- name: Copy file and restart service on Windows
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Copy file to Windows server
+      win_copy:
+        src: files/test.txt
+        dest: C:\Temp\test.txt
+
+    - name: Restart Print Spooler service
+      win_service:
+        name: spooler
+        state: restarted
