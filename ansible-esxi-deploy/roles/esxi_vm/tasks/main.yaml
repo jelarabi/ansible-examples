@@ -7,6 +7,7 @@
     validate_certs: no
     state: present
     name: "{{ vm_name }}"
+    folder: "{{ vm_folder }}"
     #template: "{{ vm_template }}"
     hardware:
       memory_mb: "{{ vm_memory }}"
